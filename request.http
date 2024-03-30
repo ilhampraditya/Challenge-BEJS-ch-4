@@ -1,0 +1,87 @@
+### menambahkan user beserta profile nya
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+    "name":"mullet",
+    "email":"mullet@gmail.com",
+    "password":"mulleti123",
+    "identity_number": "123496782",
+    "identity_type": "KTP",
+    "address": "Jl.mawar 123"
+}
+
+### menampilkan daftar user
+GET  http://localhost:3000/api/v1/users
+
+### menampilkan detail info user beserta profile
+GET  http://localhost:3000/api/v1/users/11
+
+### edit user
+PUT  http://localhost:3000/api/v1/users/11
+Content-Type: application/json
+
+{
+    "name":"adit",
+    "email":"adit@gmail.com",
+    "password":"adit123"
+}
+
+
+#####----------------------------------#####
+
+
+### menambahkan akun baru ke user yang sudah di daftarkan
+POST http://localhost:3000/api/v1/accounts
+Content-Type: application/json
+
+{
+    "bank_name":"Mandiri",
+    "bank_account_number":"6666666",
+    "balance":5000000,
+    "user_id": 4
+}
+
+### menampilkan daftar akun
+GET  http://localhost:3000/api/v1/accounts
+
+### menampilkan detail akun
+GET  http://localhost:3000/api/v1/accounts/2
+
+### edit akun
+PUT   http://localhost:3000/api/v1/accounts/4
+Content-Type: application/json
+
+{
+    "bank_name":"BTN",
+    "bank_account_number":"88888",
+    "balance":70000000
+}
+
+### delete akun
+DELETE  http://localhost:3000/api/v1/accounts/4
+
+
+#####----------------------------------#####
+
+
+### mengirimkan uang dari 1 akun ke akun lain
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "source_account_id": 1,
+  "destination_account_id": 2,
+  "amount": 555
+}
+
+### menampilkan daftar transaksi
+GET http://localhost:3000/api/v1/transactions
+
+### menampilkan detail transaksi
+GET http://localhost:3000/api/v1/transactions/6
+
+
+
+
+
